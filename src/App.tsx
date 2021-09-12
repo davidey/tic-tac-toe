@@ -40,7 +40,7 @@ interface TicTacToe {
   makeMove: (g: Game, m: Move) => Game;
 }
 
-const emptyBoard: Board = new Array(9).fill(null).map((_, i) => {
+const emptyBoard: Board = [...Array(9)].map((_, i) => {
   return {
     position: i,
     mark: null
