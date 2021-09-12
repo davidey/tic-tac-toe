@@ -1,0 +1,61 @@
+$tileSize: 6rem;
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-content: center;
+}
+
+.Board {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  width: $tileSize * 3;
+  height: $tileSize * 3;
+  border: 1px solid black;
+}
+
+.BoardTile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.BoardTileMark {
+  --mark-color: black;
+
+  &-winner {
+    --mark-color: red;
+  }
+}
+
+.BoardTileMark-X {
+  width: 80%;
+  height: 0.25rem;
+  background-color: var(--mark-color);
+  transform: rotate(45deg);
+  border-radius: 0.25rem;
+
+  &:after {
+    display: block;
+    content: "";
+    height: 100%;
+    background-color: var(--mark-color);
+    transform: rotate(90deg);
+    border-radius: 0.25rem;
+  }
+}
+
+.BoardTileMark-O {
+  width: 60%;
+  height: 60%;
+  border: 0.25rem solid var(--mark-color);
+  border-radius: 50%;
+}
